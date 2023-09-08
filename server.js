@@ -10,6 +10,7 @@ const usersRouter = require('./routes/users');
 
 require('dotenv').config();
 require('./config/database');
+require('./config/passport');
 
 const app = express();
 
@@ -23,6 +24,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
