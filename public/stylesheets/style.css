@@ -12,3 +12,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.review-user {
+  border-radius: 50%;
+  height: 40px;
+}
