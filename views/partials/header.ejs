@@ -23,7 +23,7 @@
                 <div class="navbar-nav ">
                     <a <%- title==='Tide Seeker' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %> href="/spots">All Spots</a>
                     <% if (user) { %>
-                    <a <%- title==='Add Spot' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %> href="#">Add Spots</a>
+                    <a <%- title==='Add Spot' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %> href="/spots/new">Add Spot</a>
                     <img src="<%= user.avatar%>" class="review-user" alt="avatar" referrerpolicy="no-referrer">
                     <a href="/logout" class="nav-link m-2">Log Out</a>
                     <% } else { %>
