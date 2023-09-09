@@ -1,3 +1,10 @@
 <%- include('../partials/header') %>
 <h2 class="text-center"><%= title%></h2>
+
+<% sessions.forEach(function(s) {%>
+    <h2><%= s.date%></h2>
+    <a href="/sessions/<%= s._id%>">View Session</a>
+<%}) %>
+
+
 <%- include('../partials/footer') %>
