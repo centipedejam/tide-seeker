@@ -10,7 +10,8 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', spotsCtrl.index);
 //GET '/spots/new' (new)
 router.get('/new', ensureLoggedIn, spotsCtrl.new);
-
+//GET '/spots/:id' (show)
+router.get('/:id', spotsCtrl.show);
 
 
 
