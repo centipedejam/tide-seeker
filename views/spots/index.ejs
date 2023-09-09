@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+  <h1 class="text-center mt-5">Welcome to <%= title %></h1>
+  <% spots.forEach(function(s) { %>
+    <h3><%= s.lat %></h3>
+    <h3><%= s.long %></h3>
+    <h3><%= s.ability %></h3>
+    <h3><%= s.description %></h3>
+    <h3><%= s.sessions %></h3>
+  <%})%>
+  </body>
+
+<%- include('../partials/footer') %>

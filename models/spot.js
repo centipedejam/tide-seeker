@@ -16,9 +16,10 @@ const sessionSchema = new Schema({
     rating: {
         type: Number,
         match: /[1-5]/
-    },
-    timestamps: true
-})
+    }
+}, {
+    timestamps: true 
+});
 
 const Session = mongoose.model('Session', sessionSchema);
 
@@ -39,10 +40,12 @@ const spotSchema = new Schema({
         enum: ['Beginner', 'Intermediate', 'Pro', 'Advanced']
     },
     description: String,
-    sessions: Schema.Types.ObjectId,
-    ref: 'Session'
+    sessions: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Session'
+}]
 })
 
 const Spot = mongoose.model('Spot', spotSchema);
 
-module.exports = { Spot, Session }
+module.exports = Spot;
