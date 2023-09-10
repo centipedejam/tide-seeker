@@ -3,7 +3,9 @@ const Spot = require('../models/spot');
 
 module.exports = {
     index,
-    show
+    show,
+    create,
+    new: newSession
 }
 
 async function index (req, res) {
@@ -21,4 +23,16 @@ async function show(req, res) {
         // Handle any errors that may occur during the database queries or rendering.
         console.error(error);
     }
+}
+
+async function create(req, res) {
+    const session = await Session.create(req.body);
+    const spot = await Spot.findById(req.params.id);
+    spot.sessions.push(session._id);
+}
+
+async function newSession (req, res) {
+    const spot = await Spot.findById(req.params.id)
+    console.log(spot)
+    res.render('sessions/new', {title: 'New Session', spot})
 }

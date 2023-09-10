@@ -12,5 +12,10 @@ router.get('/spots/:id/sessions', sessionsCtrl.index);
 //GET sessions/:id (show)
 router.get('/sessions/:id', sessionsCtrl.show);
 
+//POST /spots/:id/sessions (create)
+router.post('/spots/:id/sessions', ensureLoggedIn, sessionsCtrl.create)
+
+//GET /spots/:id/sessions/new (new)
+router.get('/spots/:id/sessions/new', sessionsCtrl.new)
 
 module.exports = router;

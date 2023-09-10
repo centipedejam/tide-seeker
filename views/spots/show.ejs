@@ -7,6 +7,7 @@
 <h2><%=spot.ability %></h2>
 <h2><%=spot.description %></h2>
 
-<a href="/spots/:id/sessions">View Sessions</a>
+<a href="/spots/<%= spot._id%>/sessions">View Sessions</a>
+<a href="/spots/<%= spot._id%>/sessions/new">New Session</a>
 
 <%- include('../partials/footer') %>
