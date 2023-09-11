@@ -7,6 +7,12 @@
 <h2><%=spot.ability %></h2>
 <h2><%=spot.description %></h2>
 
+<% spot.sessions.forEach(function(s) {%>
+    <%s.img.forEach(function(i) {%>
+        <img src="<%=  i%>" alt="">
+    <%})%>
+<%})%>
+
 <a href="/spots/<%= spot._id%>/sessions">View Sessions</a>
 <a href="/spots/<%= spot._id%>/sessions/new">New Session</a>
 

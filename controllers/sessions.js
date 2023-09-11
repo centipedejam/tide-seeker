@@ -4,7 +4,8 @@ module.exports = {
     index,
     show,
     create,
-    new: newSession
+    new: newSession,
+    edit
 }
 
 async function index(req, res) {
@@ -42,4 +43,17 @@ async function newSession(req, res) {
     const spot = await Spot.findById(req.params.id)
     console.log(spot)
     res.render('sessions/new', { title: 'New Session', spot })
+}
+
+async function edit( req, res) {
+    const spot = await Spot.findOne({ 'sessions._id': req.params.id });
+    const session = spot.sessions.find(session => session._id == req.params.id);
+    const validWindStrengths = Spot.schema.path('sessions.windStrength').enumValues;
+    const validSwellDirections = Spot.schema.path('sessions.swellDirection').enumValues;
+    const validSizes = Spot.schema.path('sessions.size').enumValues;
+    const validWindDirections = Spot.schema.path('sessions.windDirection').enumValues;
+    const validRatings = Spot.schema.path('sessions.rating').enumValues;
+    console.log(validRatings)
+    
+    res.render('sessions/edit', {title: 'Edit Session', session, validWindStrengths, validSwellDirections, validSizes, validWindDirections, validRatings});
 }

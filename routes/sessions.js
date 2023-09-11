@@ -13,9 +13,11 @@ router.get('/spots/:id/sessions', sessionsCtrl.index);
 router.get('/sessions/:id', sessionsCtrl.show);
 
 //POST /spots/:id/sessions (create)
-router.post('/spots/:id/sessions', ensureLoggedIn, sessionsCtrl.create)
+router.post('/spots/:id/sessions', ensureLoggedIn, sessionsCtrl.create);
 
 //GET /spots/:id/sessions/new (new)
-router.get('/spots/:id/sessions/new', sessionsCtrl.new)
+router.get('/spots/:id/sessions/new', sessionsCtrl.new);
+//GET /sessions/:id/edit (edit)
+router.get('/sessions/:id/edit', sessionsCtrl.edit);
 
 module.exports = router;

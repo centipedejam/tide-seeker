@@ -22,8 +22,8 @@ const sessionSchema = new Schema({
     comments: String,
     img: [String],
     rating: {
-        type: Number,
-        match: /[1-5]/
+        type: String,
+        enum: [1, 2, 3, 4, 5]
     }
 }, {
     timestamps: true
