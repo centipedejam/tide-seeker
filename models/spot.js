@@ -31,7 +31,7 @@ const sessionSchema = new Schema({
 
 
 const spotSchema = new Schema({
-    location: String,
+    city: String,
     lat: {
         type: Number,
         min: -90,
@@ -44,10 +44,16 @@ const spotSchema = new Schema({
     },
     ability: {
         type: String,
-        enum: ['Beginner', 'Intermediate', 'Pro', 'Advanced']
+        enum: ['Beginner', 'Intermediate', 'Pro', 'All Ability Levels']
     },
     description: String,
-    sessions: [sessionSchema]
+    sessions: [sessionSchema],
+    name: String,
+    bottomType: {
+        type: String,
+        enum: ['Sand', 'Rocky Reef', 'Coral', 'Jetty']
+    },
+    img: String
 })
 
 const Spot = mongoose.model('Spot', spotSchema);

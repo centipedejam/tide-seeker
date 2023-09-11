@@ -12,6 +12,8 @@ router.get('/', spotsCtrl.index);
 router.get('/new', ensureLoggedIn, spotsCtrl.new);
 //GET '/spots/:id' (show)
 router.get('/:id', spotsCtrl.show);
+//POST '/spots' (create)
+router.post('/', ensureLoggedIn, spotsCtrl.create)
 
 
 
