@@ -10,20 +10,22 @@ module.exports = {
 async function index(req, res) {
     const spot = await Spot.findById(req.params.id);
     const sessions = spot.sessions
+    console.log
     res.render('sessions/index', { title: 'Sessions', sessions })
 }
 
 async function show(req, res) {
     try {
-        const spot = await Spot.findOne({ sessions: req.params.id });
-
-        console.log(spot);
-        res.render('sessions/show', { session, title: 'Show Session', spot });
+        const spot = await Spot.findOne({ 'sessions._id': req.params.id });
+        const session = spot.sessions.find(session => session._id == req.params.id);
+        res.render('sessions/show', { session, title: 'Show Session' });
     } catch (error) {
-        // Handle any errors that may occur during the database queries or rendering.
+        // Handle any errors that may occur during the database query or rendering.
         console.error(error);
+        res.status(500).send('Internal Server Error'); // You can customize the error handling as needed.
     }
 }
+
 
 async function create(req, res) {
     const spot = await Spot.findById(req.params.id);
