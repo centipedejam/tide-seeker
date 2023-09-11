@@ -10,7 +10,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/spots/:id/sessions', sessionsCtrl.index);
 
 //GET sessions/:id (show)
-router.get('/sessions/:id', sessionsCtrl.show);
+router.get('/spots/:id/sessions/:id', sessionsCtrl.show);
 
 //POST /spots/:id/sessions (create)
 router.post('/spots/:id/sessions', ensureLoggedIn, sessionsCtrl.create)

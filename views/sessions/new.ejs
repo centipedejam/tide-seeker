@@ -1,6 +1,91 @@
 <%- include('../partials/header') %>
 
-<h2><%= title %></h2>
+    <h2>
+        <%= title %>
+    </h2>
 
-<a href="/spots/"></a>
-<%- include('../partials/footer') %>
+    <form action="/spots/<%= spot._id %>/sessions" method="POST">
+        <div class="row">
+            <div class="col-2 mb-3">
+
+                <select name="swellDirection" class="form-select">
+                    <option>--Swell Direction--</option>
+                    <option value="N">N</option>
+                    <option value="W">W</option>
+                    <option value="S">S</option>
+                    <option value="E">E</option>
+                    <option value="NE">NE</option>
+                    <option value="NW">NW</option>
+                    <option value="SE">SE</option>
+                    <option value="SW">SW</option>
+                    <option value="NNW">NNW</option>
+                    <option value="NNE">NNE</option>
+                    <option value="SSW">SSW</option>
+                    <option value="SSE">SSE</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <select name="size" class="form-select">
+                    <option selected>Size</option>
+                    <option value="Knee to Waist">Knee to Waist High</option>
+                    <option value="Waist to Chest">Waist to Chest High</option>
+                    <option value="Chest">Chest High</option>
+                    <option value="Head">Head High</option>
+                    <option value="Double Overhead">Double Overhead</option>
+                    <option value="Massive">Massive</option>
+                </select>
+            </div>
+
+            <div class="col-2 mb-3">
+
+                <select name="windDirection" class="form-select">
+                    <option selected>Wind Direction</option>
+                    <option value="N">N</option>
+                    <option value="W">W</option>
+                    <option value="S">S</option>
+                    <option value="E">E</option>
+                    <option value="NE">NE</option>
+                    <option value="NW">NW</option>
+                    <option value="SE">SE</option>
+                    <option value="SW">SW</option>
+                    <option value="NNW">NNW</option>
+                    <option value="NNE">NNE</option>
+                    <option value="SSW">SSW</option>
+                    <option value="SSE">SSE</option>
+                </select>
+            </div>
+            <div class="col-2 mb-3">
+
+                <select name="windStrength" class="form-select">
+                    <option selected>Wind Strength</option>
+                    <option value="Calm">Calm</option>
+                    <option value="5-10kt">5-10kt</option>
+                    <option value="10-15kt">10-15kt</option>
+                    <option value="15-20kt">15-20kt</option>
+                    <option value="20-30kt">20-30kt</option>
+                    <option value="Victory at Sea">Victory at Sea</option>
+                </select>
+            </div>
+            <div class="col-2 mb-3">
+
+                <select name="rating" class="form-select">
+                    <option selected>Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="img" class="form-label">Img Url</label>
+            <input type="text" class="form-control" id="img">
+        </div>
+        <div class="mb-3">
+            <label for="img" class="form-label">Img Url</label>
+            <input type="text" class="form-control" id="img">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <%- include('../partials/footer') %>

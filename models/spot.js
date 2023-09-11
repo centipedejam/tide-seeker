@@ -1,6 +1,34 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const sessionSchema = new Schema({
+    date: Date,
+    swellDirection: {
+        type: String,
+        enum: ['N', 'E', 'S', 'W', 'NE', 'NW', 'SE', 'SW', 'NNW', 'NNE', 'SSW', 'SSE']
+    },
+    size: {
+        type: String,
+        enum: ['Knee to Waist', 'Waist to Chest', 'Chest', 'Head', 'Double Overhead', 'Massive']
+    },
+    windDirection: {
+        type: String,
+        enum: ['N', 'E', 'S', 'W', 'NE', 'NW', 'SE', 'SW', 'NNW', 'NNE', 'SSW', 'SSE']
+    },
+    windStrength: {
+        type: String,
+        enum: ['Calm', '5-10kt', '10-15kt', '15-20kt', '20-30kt', 'Victory at Sea']
+    },
+    comments: String,
+    img: [String],
+    rating: {
+        type: Number,
+        match: /[1-5]/
+    }
+}, {
+    timestamps: true
+});
+
 
 const spotSchema = new Schema({
     location: String,
@@ -19,10 +47,7 @@ const spotSchema = new Schema({
         enum: ['Beginner', 'Intermediate', 'Pro', 'Advanced']
     },
     description: String,
-    sessions: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Session'
-}]
+    sessions: [sessionSchema]
 })
 
 const Spot = mongoose.model('Spot', spotSchema);

@@ -1,10 +1,17 @@
 <%- include('../partials/header') %>
-<h2 class="text-center"><%= title%></h2>
+    <h2 class="text-center">
+        <%= title%>
+    </h2>
 
-<% sessions.forEach(function(s) {%>
-    <h2><%= s.date%></h2>
-    <a href="/sessions/<%= s._id%>">View Session</a>
-<%}) %>
+    <% sessions.forEach(function(s) {%>
+        <h2>
+            <%= s.size%>
+        </h2>
+        <h2>
+            <%=s.swellDirection %>
+        </h2>
+        <a href="/sessions/<%= s._id%>">View Session</a>
+        <%}) %>
 
 
-<%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

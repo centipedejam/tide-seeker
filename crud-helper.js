@@ -1,7 +1,7 @@
 require('dotenv').config();
 // Connect to the database
 require('./config/database');
-const Session = require('./models/session');
+const Spot = require('./models/spot');
 
-let sessions = await Session.find({});
-console.log(sessions)
+let spots = await Spot.find({});
+console.log(spots);
