@@ -20,7 +20,10 @@ router.get('/spots/:id/sessions/new', ensureLoggedIn, sessionsCtrl.new);
 //GET /sessions/:id/edit (edit)
 router.get('/sessions/:id/edit', ensureLoggedIn, sessionsCtrl.edit);
 
-//PUT /sessions:id (update)
+//PUT /sessions/:id (update)
 router.put('/sessions/:id', ensureLoggedIn, sessionsCtrl.update)
+
+//DELETE /sessions/:id (delete)
+router.delete('/sessions/:id', ensureLoggedIn, sessionsCtrl.delete)
 
 module.exports = router;

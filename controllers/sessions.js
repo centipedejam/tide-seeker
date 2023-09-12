@@ -6,7 +6,8 @@ module.exports = {
     create,
     new: newSession,
     edit,
-    update
+    update,
+    delete: deleteSession
 }
 
 async function index(req, res) {
@@ -79,4 +80,12 @@ async function update (req, res) {
         console.log(err.message)
     }
     res.redirect(`/sessions/${session._id}`);
+}
+
+async function deleteSession (req, res) {
+    const spot = await Spot.findOne({'sessions._id' : req.params.id});
+    if (!spot) return res.redirect(`/spots/${spot._id}`);
+    spot.sessions.remove(req.params.id);
+    await spot.save();
+    res.redirect(`/spots/${spot._id}/sessions`);
 }

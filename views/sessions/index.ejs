@@ -14,6 +14,11 @@
             <%= s._id%>
         </h1>
         <a href="/sessions/<%= s._id%>">View Session</a>
+        <% if (user && s.user.equals(user._id)) {%>
+            <form action="/sessions/<%= s._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
+            <%}%>
         <%}) %>
 
 
