@@ -24,7 +24,13 @@ const sessionSchema = new Schema({
     rating: {
         type: String,
         enum: [1, 2, 3, 4, 5]
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
+    description: String
 }, {
     timestamps: true
 });

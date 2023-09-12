@@ -28,6 +28,6 @@ async function create(req, res) {
         res.redirect(`/spots/${spot._id}`);
     } catch (err) {
         console.log(err);
-        res.render('spots/new', { errMsg: err.message });
+        res.render('spots/new', { errMsg: err.message, title: 'hello' });
     }
 }
