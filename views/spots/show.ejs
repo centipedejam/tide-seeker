@@ -1,19 +1,47 @@
 <%- include('../partials/header') %>
 
-<h3 class="text-center mt-5"><%= title %></h3>
+    <div class="card m-auto spot-card mt-5">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <% spot.sessions.forEach(function(s, index) { %>
+                    <% s.img.forEach(function(i, imgIndex) { %>
+                        <div class="carousel-item <%= imgIndex === 0 ? 'active' : '' %>">
+                            <img src="<%= i %>" class="d-block w-100 card-img-top" alt="...">
+                        </div>
+                        <% }) %>
+                            <% }) %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title text-center">
+                <%= spot.name %>
+            </h3>
+            <hr>
+            <p class="card-text">Location: <%= spot.city %>
+            </p>
+            <hr>
+            <p class="card-text">
+                Ability Level: <%= spot.ability%>
+            </p>
+            <hr>
+            <p class="card-text">
+                Bottom: <%= spot.bottomType%>
+            </p>
+            <hr>
+            <p class="card-text">
+                Description: <%= spot.description%>
+            </p>
+        </div>
+        <a class="spot-btn btn btn-primary" href="/spots/<%= spot._id%>/sessions">View Sessions</a>
+        <a class="spot-btn btn btn-success" href="/spots/<%= spot._id%>/sessions/new">New Session</a>
+    </div>
 
-<h2><%=spot.lat %></h2>
-<h2><%=spot.long %></h2>
-<h2><%=spot.ability %></h2>
-<h2><%=spot.description %></h2>
-
-<% spot.sessions.forEach(function(s) {%>
-    <%s.img.forEach(function(i) {%>
-        <img src="<%=  i%>" alt="">
-    <%})%>
-<%})%>
-
-<a href="/spots/<%= spot._id%>/sessions">View Sessions</a>
-<a href="/spots/<%= spot._id%>/sessions/new">New Session</a>
-
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

@@ -69,6 +69,8 @@ async function update (req, res) {
     const session = spot.sessions.id(req.params.id);
     if (!session.user.equals(req.user._id)) return res.redirect(`/spots/${spot._id}`);
     session.rating = req.body.rating;
+    session.img = [];
+    session.img = req.body.img;
     session.swellDirection = req.body.swellDirection;
     session.windDirection = req.body.windDirection;
     session.windStrength = req.body.windStrength;

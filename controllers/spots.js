@@ -9,7 +9,7 @@ module.exports = {
 
 async function index(req, res) {
     const spots = await Spot.find({});
-    res.render('spots/index', { title: 'Index Functionality', spots })
+    res.render('spots/index', { title: 'All Surf Spots', spots })
 };
 
 function newSpot(req, res) {
@@ -19,7 +19,7 @@ function newSpot(req, res) {
 async function show(req, res) {
     const spot = await Spot.findById(req.params.id)
     console.log(spot)
-    res.render('spots/show', { title: 'Show', spot })
+    res.render('spots/show', { title: spot.name, spot })
 }
 
 async function create(req, res) {

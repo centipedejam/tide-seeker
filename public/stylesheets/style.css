@@ -17,3 +17,16 @@ a {
   border-radius: 50%;
   height: 40px;
 }
+
+.card-img-top {
+  height: 40vmin;
+}
+
+.spot-btn {
+  width: 70vmin;
+  margin: 0.5vmin auto;
+}
+
+.spot-card {
+  width: 80vmin;
+}
