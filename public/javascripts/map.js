@@ -11,7 +11,7 @@ fetch('/api/surfspots')
             const latitude = parseFloat(spot.lat);
             const longitude = parseFloat(spot.long);
             const marker = L.marker([latitude, longitude]).addTo(map);
-            marker.bindPopup(`<a href="/spots/${spot._id}">${spot.name}</a> <br><img class="marker-img" src="${spot.img}">`);
+            marker.bindPopup(`<a href="/spots/${spot._id}">${spot.name} | ${spot.city}</a> <br><img class="marker-img" src="${spot.img}">`);
         });
     })
     .catch(error => console.error(error));

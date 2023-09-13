@@ -17,13 +17,17 @@ router.get('/auth/google', passport.authenticate(
   }
 ));
 
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect: '/',
-    failureRedirect: '/'
-  }
-));
+router.get('/oauth2callback', function (req, res, next) {
+  const redirectTo = req.session.redirectTo;
+  delete req.session.redirectTo;
+  passport.authenticate(
+    'google',
+    {
+      successRedirect: redirectTo || '/spots',
+      failureRedirect: '/spots'
+    }
+  )(req, res, next);  // Call the middleware returned by passport
+});
 
 router.get('/logout', function (req, res) {
   req.logout(function () {

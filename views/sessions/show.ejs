@@ -1,55 +1,54 @@
 <%- include('../partials/header') %>
 
 
-<div class="card m-auto spot-card mt-5">
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-            <%session.img.forEach(function(i, idx) {%>
-                <div class="carousel-item <%= idx === 0 ? 'active' : '' %>">
-                    <img class="d-block w-100 card-img-top" src="<%=i%>" alt="">
-                </div>
-            <%})%>
-                   
+    <div class="card m-auto spot-card mt-5">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <%session.img.forEach(function(i, idx) {%>
+                    <div class="carousel-item <%= idx === 0 ? 'active' : '' %>">
+                        <img class="d-block w-100 card-img-top" src="<%=i%>" alt="">
+                    </div>
+                    <%})%>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="card-body">
+            <h3 class="card-title text-center">
+                <%= session.date %>
+            </h3>
+            <hr>
+            <p class="card-text">Swell: <%= session.size %> from the <%= session.swellDirection %>
+            </p>
+            <hr>
+            <p class="card-text">
+                Wind: <%= session.windStrength %> from the <%= session.windDirection %>
+            </p>
+            <hr>
+            <p class="card-text">
+                Stars: <%= session.rating %>
+            </p>
+            <hr>
+            <p class="card-text">
+                Comments: <%= session.description%>
+            </p>
+        </div>
+        <% if (user && session.user.equals(user._id)) {%>
+            <form action="/sessions/<%= session._id %>/edit" method="GET">
+                <button class="btn btn-warning" style="width: 80vmin;" type="submit">Edit Session</button>
+            </form>
+            <form action="/sessions/<%= session._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger" style="width: 80vmin;" type="submit">Delete Session</button>
+            </form>
+            <%}%>
     </div>
-    <div class="card-body">
-        <h3 class="card-title text-center">
-            <%= session.date %>
-        </h3>
-        <hr>
-        <p class="card-text">Location: <%= session.size %>
-        </p>
-        <hr>
-        <p class="card-text">
-            Ability Level: <%= session.swellDirection %>
-        </p>
-        <hr>
-        <p class="card-text">
-            Bottom: <%= session.rating %>
-        </p>
-        <hr>
-        <p class="card-text">
-            Description: <%= session.description%>
-        </p>
-    </div>
-</div>
-<% if (user && session.user.equals(user._id)) {%>
-    <form action="/sessions/<%= session._id %>/edit" method="GET">
-        <button class="btn btn-warning" style="width: 40vmin;" type="submit">Edit Session</button>
-    </form>
-    <form action="/sessions/<%= session._id %>?_method=DELETE" method="POST">
-        <button class="btn btn-danger" style="width: 40vmin;" type="submit">Delete Session</button>
-    </form>
-    <%}%>
 
-<a href="/sessions/<%= session._id %>/edit">Edit Session</a>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
