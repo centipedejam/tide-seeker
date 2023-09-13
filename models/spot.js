@@ -29,7 +29,7 @@ const sessionSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-      },
+    },
     description: String
 }, {
     timestamps: true
@@ -54,12 +54,20 @@ const spotSchema = new Schema({
     },
     description: String,
     sessions: [sessionSchema],
-    name: String,
+    name: {
+        type: String,
+        unique: true
+    },
     bottomType: {
         type: String,
         enum: ['Sand', 'Rocky Reef', 'Coral', 'Jetty']
     },
-    img: String
+    img: String,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }
 })
 
 const Spot = mongoose.model('Spot', spotSchema);

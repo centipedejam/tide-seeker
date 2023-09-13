@@ -30,3 +30,12 @@ a {
 .spot-card {
   width: 80vmin;
 }
+
+#map {
+  height: 60vmin;
+  width: 50vmin;
+}
+
+#description-textarea {
+  height: 13vmin;
+}

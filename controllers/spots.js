@@ -24,6 +24,9 @@ async function show(req, res) {
 
 async function create(req, res) {
     try {
+        req.body.user = req.user._id;
+        req.body.userName = req.user.name;
+        req.body.userAvatar = req.user.avatar;
         const spot = await Spot.create(req.body);
         res.redirect(`/spots/${spot._id}`);
     } catch (err) {
