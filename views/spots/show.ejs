@@ -3,9 +3,12 @@
     <div class="card m-auto spot-card mt-5">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
-                <% spot.sessions.forEach(function(s, index) { %>
-                    <% s.img.forEach(function(i, imgIndex) { %>
-                        <div class="carousel-item <%= imgIndex === 0 ? 'active' : '' %>">
+                <div class="carousel-item active">
+                    <img src="<%= spot.img %>" class="d-block w-100 card-img-top" alt="...">
+                </div>
+                <% spot.sessions.forEach(function(s) { %>
+                    <% s.img.forEach(function(i) { %>
+                        <div class="carousel-item">
                             <img src="<%= i %>" class="d-block w-100 card-img-top" alt="...">
                         </div>
                         <% }) %>

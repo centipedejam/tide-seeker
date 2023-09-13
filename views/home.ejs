@@ -1,8 +1,15 @@
 <%- include('./partials/header') %>
+  <div class="container">
+    <h1 class="text-center mt-5">
+      Welcome to <%= title %>
+    </h1>
+    <%if(!user) {%>
+      <a class="btn btn-success m-auto" href="/auth/google">Sign Up!</a>
+      <%} else {%>
+        <a class="btn btn-success" href="/spots">View All Spots</a>
+        <%}%>
+          <div class="row">
+            <div class="m-auto mt-5" id="map"></div>
+          </div>
 
-  <h1 class="text-center mt-5">
-    Welcome to <%= title %>
-  </h1>
-  <div class="m-auto" id="map"></div>
-
-  <%- include('./partials/footer') %>
+          <%- include('./partials/footer') %>

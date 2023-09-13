@@ -1,16 +1,15 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: 'Merriweather', serif;
   color: #424748;
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /* background-image: url('https://i.imgur.com/Xz9Vl10.jpg');
-  background-size: cover;
-  background-attachment: fixed; */
-  background-color: pink;
+  background-color: #FFCF9D;
+}
+
+h1 {
+  color: #004225;
 }
 
 a {
@@ -36,8 +35,8 @@ a {
 }
 
 #map {
-  height: 60vmin;
-  width: 50vmin;
+  height: 67vmin;
+  width: 80vmin;
 }
 
 #description-textarea {
@@ -58,15 +57,67 @@ nav.navbar {
 }
 
 .navbar-nav>a {
-  color: white;
+  color: #004225;
   font-size: 2vmin;
 }
 
 .navbar-nav>a:hover {
-  color: pink;
+  color: #22668D;
   font-size: 2vmin;
 }
 
 footer {
+  color: grey;
+}
+
+.btn-primary {
+  background-color: #004225;
+  border: #004225;
+}
+
+.btn-primary:hover {
+  background-color: #097e4c;
+  border: #097e4c;
+}
+
+.btn-success {
+  background-color: #22668D;
+  border: #22668D;
+}
+
+.btn-success:hover {
+  background-color: #097e4c;
+  border: #097e4c;
+}
+
+
+.btn-warning {
+  background-color: #22668D;
+  border: #22668D;
   color: white;
+}
+
+.btn-warning:hover {
+  background-color: #ffbf00;
+  border: #097e4c;
+}
+
+.btn-danger {
+  background-color: #C63D2F;
+  border: #C63D2F;
+}
+
+.btn-danger:hover {
+  background-color: #fe1900;
+  border: #097e4c;
+}
+
+.edit-session-div {
+  margin-top: 15vmin;
+  margin-bottom: 20vmin;
+}
+
+.marker-img {
+  height: 20vmin;
+  width: 20vmin;
 }
