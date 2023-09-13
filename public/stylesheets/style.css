@@ -7,6 +7,10 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background-image: url('https://i.imgur.com/Xz9Vl10.jpg');
+  background-size: cover;
+  background-attachment: fixed; */
+  background-color: pink;
 }
 
 a {
@@ -38,4 +42,31 @@ a {
 
 #description-textarea {
   height: 13vmin;
+}
+
+.delete-btn {
+  width: 60vmin;
+}
+
+#nav-logo {
+  height: 6vmin;
+  width: 6vmin;
+}
+
+nav.navbar {
+  background-color: transparent;
+}
+
+.navbar-nav>a {
+  color: white;
+  font-size: 2vmin;
+}
+
+.navbar-nav>a:hover {
+  color: pink;
+  font-size: 2vmin;
+}
+
+footer {
+  color: white;
 }

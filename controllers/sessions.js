@@ -14,7 +14,7 @@ async function index(req, res) {
     const spot = await Spot.findById(req.params.id);
     const sessions = spot.sessions
     console.log
-    res.render('sessions/index', { title: 'Sessions', sessions })
+    res.render('sessions/index', { title: 'Sessions', sessions, spot })
 }
 
 async function show(req, res) {
@@ -51,7 +51,7 @@ async function newSession(req, res) {
     res.render('sessions/new', { title: 'New Session', spot })
 }
 
-async function edit( req, res) {
+async function edit(req, res) {
     const spot = await Spot.findOne({ 'sessions._id': req.params.id });
     const session = spot.sessions.id(req.params.id);
     const validWindStrengths = Spot.schema.path('sessions.windStrength').enumValues;
@@ -59,13 +59,13 @@ async function edit( req, res) {
     const validSizes = Spot.schema.path('sessions.size').enumValues;
     const validWindDirections = Spot.schema.path('sessions.windDirection').enumValues;
     const validRatings = Spot.schema.path('sessions.rating').enumValues;
-    
-    
-    res.render('sessions/edit', {title: 'Edit Session', session, validWindStrengths, validSwellDirections, validSizes, validWindDirections, validRatings});
+
+
+    res.render('sessions/edit', { title: 'Edit Session', session, validWindStrengths, validSwellDirections, validSizes, validWindDirections, validRatings });
 }
 
-async function update (req, res) {
-    const spot = await Spot.findOne({'sessions._id' : req.params.id});
+async function update(req, res) {
+    const spot = await Spot.findOne({ 'sessions._id': req.params.id });
     const session = spot.sessions.id(req.params.id);
     if (!session.user.equals(req.user._id)) return res.redirect(`/spots/${spot._id}`);
     session.rating = req.body.rating;
@@ -84,8 +84,8 @@ async function update (req, res) {
     res.redirect(`/sessions/${session._id}`);
 }
 
-async function deleteSession (req, res) {
-    const spot = await Spot.findOne({'sessions._id' : req.params.id});
+async function deleteSession(req, res) {
+    const spot = await Spot.findOne({ 'sessions._id': req.params.id });
     if (!spot) return res.redirect(`/spots/${spot._id}`);
     spot.sessions.remove(req.params.id);
     await spot.save();

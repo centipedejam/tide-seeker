@@ -19,7 +19,6 @@ const sessionSchema = new Schema({
         type: String,
         enum: ['Calm', '5-10kt', '10-15kt', '15-20kt', '20-30kt', 'Victory at Sea']
     },
-    comments: String,
     img: [String],
     rating: {
         type: String,

@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newSpot,
     show,
-    create
+    create,
+    getAllSpots
 }
 
 async function index(req, res) {
@@ -34,3 +35,13 @@ async function create(req, res) {
         res.render('spots/new', { errMsg: err.message, title: 'hello' });
     }
 }
+
+async function getAllSpots(req, res) {
+    try {
+        const spots = await Spot.find({});
+        res.json(spots);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};

@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const spotsCtrl = require('../controllers/spots');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('home', { title: 'Surf Seeker' });
 });
 
@@ -29,5 +30,7 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
   });
 });
+
+router.get('/api/surfspots', spotsCtrl.getAllSpots)
 
 module.exports = router;
