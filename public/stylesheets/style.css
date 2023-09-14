@@ -121,3 +121,9 @@ footer {
   height: 20vmin;
   width: 30vmin;
 }
+
+.session-avatar {
+  border-radius: 50%;
+  height: 8vmin;
+  width: 8vmin;
+}

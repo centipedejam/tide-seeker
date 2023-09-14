@@ -1,4 +1,5 @@
 const Spot = require('../models/spot');
+const User = require('../models/user');
 
 module.exports = {
     index,
@@ -21,7 +22,9 @@ async function show(req, res) {
     try {
         const spot = await Spot.findOne({ 'sessions._id': req.params.id });
         const session = spot.sessions.find(session => session._id == req.params.id);
-        res.render('sessions/show', { session, title: 'Show Session' });
+        const userId = session.user;
+        const author = await User.findById(userId);
+        res.render('sessions/show', { session, title: 'Show Session', author });
     } catch (error) {
         // Handle any errors that may occur during the database query or rendering.
         console.error(error);
@@ -42,13 +45,13 @@ async function create(req, res) {
     } catch (err) {
         console.log(err);
     }
-    res.redirect(`/spots/${spot._id}`);
+    res.redirect(`/spots/${req.params.id}/sessions`);
 }
 
 async function newSession(req, res) {
     const spot = await Spot.findById(req.params.id)
     console.log(spot)
-    res.render('sessions/new', { title: 'New Session', spot })
+    res.render('sessions/new', { title: `New Session at ${spot.name}`, spot })
 }
 
 async function edit(req, res) {
@@ -68,6 +71,7 @@ async function update(req, res) {
     const spot = await Spot.findOne({ 'sessions._id': req.params.id });
     const session = spot.sessions.id(req.params.id);
     if (!session.user.equals(req.user._id)) return res.redirect(`/spots/${spot._id}`);
+    session.date = req.body.date;
     session.rating = req.body.rating;
     session.img = [];
     session.img = req.body.img;

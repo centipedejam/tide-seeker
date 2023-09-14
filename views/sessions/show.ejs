@@ -21,9 +21,14 @@
             </button>
         </div>
         <div class="card-body">
-            <h3 class="card-title text-center">
-                <%= session.date %>
-            </h3>
+
+            <img class="session-avatar" src="<%=author.avatar%>" alt="">
+            <h6 class="mt-3 text-muted">
+                Author: <%= author.name%>
+            </h6>
+            <h6 class="text-muted ">
+                Date: <%= session.date%>
+            </h6>
             <hr>
             <p class="card-text">Swell: <%= session.size %> from the <%= session.swellDirection %>
             </p>
