@@ -28,32 +28,32 @@ Add your own sessions with photos to share with the world!
   | <h3>Landing Page</h3> | <img src="https://i.imgur.com/8Uetvp9.png">
   | <h3>Spot Index</h3> | <img src="https://i.imgur.com/Wi4hXau.png">
   | <h3>Show Spot</h3> | <img src="https://i.imgur.com/Ui9357b.png">
-  | <h3>Session Index</h3> | <img src="https://i.imgur.com/ykh2LhN.png">
+  | <h3>Session Index</h3> | <img src="https://i.imgur.com/uHmcRPT.png">
+  | <h3>Add Spot</h3> | <img src="https://i.imgur.com/of4zNrc.png">
+  | <h3>Edit Session</h3> | <img src="https://i.imgur.com/YxAWDrf.png">
 
 ## :computer: Technologies Used
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
-![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
-![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
-![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
-![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
-![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-## :white_check_mark: Getting Started
 
-<details open>
-  <summary> Instructions </summary>
-    
-    1. Enter a wager > 0 and <= to the wallet amount located in the bottom right corner.
+## :white_check_mark: Next Steps
 
-    2. Click on 'Make Wager' button.
+- [ ] Upload local image files
+- [ ] View your created sessions
+- [ ] View your favorite spots
+- [ ] Add filters and sort
 
-    3. Analyze the player and dealer hands. Click on the 'Hit' button to receive another card.
 
-    4. Click on the 'Stay' button to play out the dealer's hand and get results of the game.
-
-    5. Check updated wallet amount and click on 'Next Hand'
-
-    6. Enter a new wager.
 </details>
 
