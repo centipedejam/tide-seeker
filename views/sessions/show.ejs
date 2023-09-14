@@ -32,10 +32,10 @@
         </div>
         <% if(user && session.user.equals(user._id)) {%>
             <form action="/sessions/<%= session._id %>/edit" method="GET">
-                <button class="btn btn-warning" style="width: 80vmin;" type="submit">Edit Session</button>
+                <button class="btn btn-warning" style="width: 90vmin;" type="submit">Edit Session</button>
             </form>
             <form action="/sessions/<%= session._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-danger" style="width: 80vmin;" type="submit">Delete Session</button>
+                <button class="btn btn-danger" style="width: 90vmin;" type="submit">Delete Session</button>
             </form>
             <%}%>
     </div>
