@@ -5,11 +5,10 @@ const spotsCtrl = require('../controllers/spots');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('home', { title: 'Surf Seeker' });
+  res.render('home', { title: 'Tide Seeker' });
 });
 
 router.get('/auth/google', passport.authenticate(
-  // which passport strategy
   'google',
   {
     scope: ['profile', 'email'],
@@ -26,7 +25,7 @@ router.get('/oauth2callback', function (req, res, next) {
       successRedirect: redirectTo || '/spots',
       failureRedirect: '/spots'
     }
-  )(req, res, next);  // Call the middleware returned by passport
+  )(req, res, next);
 });
 
 router.get('/logout', function (req, res) {
@@ -35,6 +34,6 @@ router.get('/logout', function (req, res) {
   });
 });
 
-router.get('/api/surfspots', spotsCtrl.getAllSpots)
+router.get('/api/surfspots', spotsCtrl.getAllSpots);
 
 module.exports = router;

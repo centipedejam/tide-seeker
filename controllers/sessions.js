@@ -13,9 +13,8 @@ module.exports = {
 
 async function index(req, res) {
     const spot = await Spot.findById(req.params.id);
-    const sessions = spot.sessions
-    console.log
-    res.render('sessions/index', { title: 'Sessions', sessions, spot })
+    const sessions = spot.sessions;
+    res.render('sessions/index', { title: 'Sessions', sessions, spot });
 }
 
 async function show(req, res) {
@@ -26,12 +25,10 @@ async function show(req, res) {
         const author = await User.findById(userId);
         res.render('sessions/show', { session, title: 'Show Session', author });
     } catch (error) {
-        // Handle any errors that may occur during the database query or rendering.
         console.error(error);
-        res.status(500).send('Internal Server Error'); // You can customize the error handling as needed.
+        res.status(500).send('Internal Server Error');
     }
 }
-
 
 async function create(req, res) {
     const spot = await Spot.findById(req.params.id);
@@ -49,9 +46,9 @@ async function create(req, res) {
 }
 
 async function newSession(req, res) {
-    const spot = await Spot.findById(req.params.id)
-    console.log(spot)
-    res.render('sessions/new', { title: `New Session at ${spot.name}`, spot })
+    const spot = await Spot.findById(req.params.id);
+    console.log(spot);
+    res.render('sessions/new', { title: `New Session at ${spot.name}`, spot });
 }
 
 async function edit(req, res) {
@@ -62,8 +59,6 @@ async function edit(req, res) {
     const validSizes = Spot.schema.path('sessions.size').enumValues;
     const validWindDirections = Spot.schema.path('sessions.windDirection').enumValues;
     const validRatings = Spot.schema.path('sessions.rating').enumValues;
-
-
     res.render('sessions/edit', { title: 'Edit Session', session, validWindStrengths, validSwellDirections, validSizes, validWindDirections, validRatings });
 }
 
@@ -83,7 +78,7 @@ async function update(req, res) {
     try {
         await spot.save();
     } catch (err) {
-        console.log(err.message)
+        console.log(err.message);
     }
     res.redirect(`/sessions/${session._id}`);
 }

@@ -1,65 +1,63 @@
 <%- include('../partials/header') %>
-    <h3 class="text-center mt-5">
-        <%= title %>
-    </h3>
-    <div class="container">
-        <div style="width: 70%;" class="m-auto mt-5">
-            <form method="POST" action="/spots">
-                <div class="row">
-                    <div class="col-6 mb-4">
-                        <label for="name" class="form-label">Name of Spot</label>
-                        <input placeholder="Black's Beach" type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="col-6 mb-4">
-                        <label for="city" class="form-label">City, State</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="San Diego, CA">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 mb-4">
-                        <label for="ability" class="form-label">Ability Level</label>
-                        <select name="ability" id="ability" class="form-select">
-                            <option value="Beginner">Beginner</option>
-                            <option value="Intermediate">Intermediate</option>
-                            <option value="Pro">Pro</option>
-                            <option value="All Ability Levels">All Ability Levels</option>
-                        </select>
-                    </div>
-                    <div class="col-3 mb-4">
-                        <label for="bottomType" class="form-label">Bottom Type</label>
-                        <select name="bottomType" id="bottomType" class="form-select">
-                            <option value="Sand">Sand</option>
-                            <option value="Rocky Reef">Rocky Reef</option>
-                            <option value="Coral">Coral</option>
-                            <option value="Jetty">Jetty</option>
-                        </select>
-                    </div>
-                    <div class="col-3 mb-4">
-                        <label for="lat" class="form-label">Latitude</label>
-                        <input placeholder="Negative # for South" type="text" class="form-control" id="lat" name="lat"
-                            aria-describedby="lat">
-                    </div>
-                    <div class="col-3 mb-4">
-                        <label for="long" class="form-label">Longitude</label>
-                        <input placeholder="Negative # for West" type="text" class="form-control" id="long" name="long">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-floating mb-4">
-                        <textarea class="form-control" id="description" name="description"></textarea>
-                        <label for="description">Description</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-4">
-                        <label for="img" class="form-label">Main Image</label>
-                        <input placeholder="www.img.com/img.png" type="text" class="form-control" id="img" name="img">
-                    </div>
-                </div>
 
-                <button class="btn btn-success mb-5 mt-4" type="submit">Submit</button>
-            </form>
-        </div>
+<h3 class="text-center mt-5"><%= title %></h3>
+<div class="container">
+    <div style="width: 70%;" class="m-auto mt-5">
+        <form method="POST" action="/spots">
+            <div class="row">
+                <div class="col-6 mb-4">
+                    <label for="name" class="form-label">Name of Spot</label>
+                    <input placeholder="Black's Beach" type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="col-6 mb-4">
+                    <label for="city" class="form-label">City, State</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="San Diego, CA">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-4">
+                    <label for="ability" class="form-label">Ability Level</label>
+                    <select name="ability" id="ability" class="form-select">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Pro">Pro</option>
+                        <option value="All Ability Levels">All Ability Levels</option>
+                    </select>
+                </div>
+                <div class="col-3 mb-4">
+                    <label for="bottomType" class="form-label">Bottom Type</label>
+                    <select name="bottomType" id="bottomType" class="form-select">
+                        <option value="Sand">Sand</option>
+                        <option value="Rocky Reef">Rocky Reef</option>
+                        <option value="Coral">Coral</option>
+                        <option value="Jetty">Jetty</option>
+                    </select>
+                </div>
+                <div class="col-3 mb-4">
+                    <label for="lat" class="form-label">Latitude</label>
+                    <input placeholder="Negative # for South" type="text" class="form-control" id="lat" name="lat"
+                        aria-describedby="lat">
+                </div>
+                <div class="col-3 mb-4">
+                    <label for="long" class="form-label">Longitude</label>
+                    <input placeholder="Negative # for West" type="text" class="form-control" id="long" name="long">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" id="description" name="description"></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-4">
+                    <label for="img" class="form-label">Main Image</label>
+                    <input placeholder="www.img.com/img.png" type="text" class="form-control" id="img" name="img">
+                </div>
+            </div>
+            <button class="btn btn-success mb-5 mt-4" type="submit">Submit</button>
+        </form>
     </div>
+</div>
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

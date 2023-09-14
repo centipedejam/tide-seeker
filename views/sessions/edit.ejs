@@ -1,84 +1,71 @@
 <%- include('../partials/header') %>
-
-    <h1 class="text-center mb-5">
-        <%= title %>
-    </h1>
-    <div class="container edit-session-div" style="width: 60%">
-        <form action="/sessions/<%=session._id%>?_method=PUT" method="POST">
-            <div class="row">
-                <div class="col-2 mb-4">
-                    <label for="swellDirection" class="form-label">Swell Direction</label>
-                    <select name="swellDirection" id="swellDirection" class="form-select">
-                        <%validSwellDirections.forEach(function(r){%>
-                            <option value="<%=r%>" <%=r===session.swellDirection ? 'selected' : '' %> ><%= r%>
-                            </option>
+<h1 class="text-center mb-5"><%= title %></h1>
+<div class="container edit-session-div" style="width: 60%">
+    <form action="/sessions/<%=session._id%>?_method=PUT" method="POST">
+        <div class="row">
+            <div class="col-2 mb-4">
+                <label for="swellDirection" class="form-label">Swell Direction</label>
+                <select name="swellDirection" id="swellDirection" class="form-select">
+                <%validSwellDirections.forEach(function(r){%>
+                    <option value="<%=r%>" <%=r===session.swellDirection ? 'selected' : '' %> ><%= r%></option>
                             <%}) %>
-                    </select>
-                </div>
-
-                <div class="col-3 mb-4">
-                    <label for="size" class="form-label">Swell Size</label>
-                    <select id="size" name="size" class="form-select">
-                        <%validSizes.forEach(function(r){%>
-                            <option value="<%=r%>" <%=r===session.size ? 'selected' : '' %> ><%= r%>
-                            </option>
-                            <%}) %>
-                    </select>
-                </div>
-
-
-                <div class="col-2 mb-4">
-                    <label for="windDirection" class="form-label">Wind Direction</label>
-                    <select name="windDirection" class="form-select" id="windDirection">
-                        <%validWindDirections.forEach(function(r){%>
-                            <option value="<%=r%>" <%=r===session.windDirection ? 'selected' : '' %> ><%= r%>
-                            </option>
-                            <%}) %>
-                    </select>
-                </div>
-                <div class="col-3 mb-4">
-                    <label for="windStrength" class="form-label">Wind Strength</label>
-                    <select id="windStrength" name="windStrength" class="form-select">
-                        <%validWindStrengths.forEach(function(w){%>
-                            <option value="<%=w%>" <%=w===session.windStrength ? 'selected' : '' %> ><%= w%>
-                            </option>
-                            <%}) %>
-                    </select>
-                </div>
-                <div class="col-2 mb-4">
-                    <label for="rating" class="form-label">Rating</label>
-                    <select id="rating" name="rating" class="form-select">
-                        <%validRatings.forEach(function(w){%>
-                            <option value="<%=w%>" <%=w===session.rating ? 'selected' : '' %> ><%= w%>
-                            </option>
-                            <%}) %>
-                    </select>
-                </div>
-
+                </select>
             </div>
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <label for="date" class="form-label">Date of Session</label>
-                    <input value="<%= session.date%>" class="form-control" type="datetime-local" name="date" id="date">
-                </div>
+            <div class="col-3 mb-4">
+                <label for="size" class="form-label">Swell Size</label>
+                <select id="size" name="size" class="form-select">
+                    <%validSizes.forEach(function(r){%>
+                        <option value="<%=r%>" <%=r===session.size ? 'selected' : '' %> ><%= r%>
+                        </option>
+                        <%}) %>
+                </select>
             </div>
-            <div class="row">
-
-                <%session.img.forEach(function(i) {%>
-                    <div class="mb-5 col-6">
-                        <label for="img" class="form-label">Img Url</label>
-                        <input value="<%= i%>" type="text" class="form-control" name="img" id="img">
-                    </div>
+            <div class="col-2 mb-4">
+                <label for="windDirection" class="form-label">Wind Direction</label>
+                <select name="windDirection" class="form-select" id="windDirection">
+                    <%validWindDirections.forEach(function(r){%>
+                        <option value="<%=r%>" <%=r===session.windDirection ? 'selected' : '' %> ><%= r%></option>
+                            <%}) %>
+                </select>
+            </div>
+            <div class="col-3 mb-4">
+                <label for="windStrength" class="form-label">Wind Strength</label>
+                <select id="windStrength" name="windStrength" class="form-select">
+                    <%validWindStrengths.forEach(function(w){%>
+                        <option value="<%=w%>" <%=w===session.windStrength ? 'selected' : '' %> ><%= w%></option>
+                            <%}) %>
+                </select>
+            </div>
+            <div class="col-2 mb-4">
+                <label for="rating" class="form-label">Rating</label>
+                <select id="rating" name="rating" class="form-select">
+                    <%validRatings.forEach(function(w){%>
+                            <option value="<%=w%>" <%=w===session.rating ? 'selected' : '' %> ><%= w%></option>
+                            <%}) %>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <label for="date" class="form-label">Date of Session</label>
+                <input value="<%= session.date%>" class="form-control" type="datetime-local" name="date" id="date">
+            </div>
+        </div>
+        <div class="row">
+            <%session.img.forEach(function(i) {%>
+                <div class="mb-5 col-6">
+                    <label for="img" class="form-label">Img Url</label>
+                    <input value="<%= i%>" type="text" class="form-control" name="img" id="img">
+                </div>
                     <%})%>
+        </div>
+        <div class="row">
+            <div class="form-floating mb-4">
+                <textarea class="form-control" id="description" name="description"><%= session.description %></textarea>
+                <label for="description">Description</label>
             </div>
-            <div class="row">
-                <div class="form-floating mb-4">
-                    <textarea class="form-control" id="description"
-                        name="description"><%= session.description %></textarea>
-                    <label for="description">Description</label>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Update Session</button>
-        </form>
-    </div>
-    <%- include('../partials/footer') %>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Update Session</button>
+    </form>
+</div>
+<%- include('../partials/footer') %>

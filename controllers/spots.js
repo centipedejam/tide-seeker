@@ -10,17 +10,17 @@ module.exports = {
 
 async function index(req, res) {
     const spots = await Spot.find({});
-    res.render('spots/index', { title: 'All Surf Spots', spots })
+    res.render('spots/index', { title: 'All Surf Spots', spots });
 };
 
 function newSpot(req, res) {
-    res.render('spots/new', { title: 'Add Surf Spot' })
+    res.render('spots/new', { title: 'Add Surf Spot' });
 }
 
 async function show(req, res) {
-    const spot = await Spot.findById(req.params.id)
-    console.log(spot)
-    res.render('spots/show', { title: spot.name, spot })
+    const spot = await Spot.findById(req.params.id);
+    console.log(spot);
+    res.render('spots/show', { title: spot.name, spot });
 }
 
 async function create(req, res) {

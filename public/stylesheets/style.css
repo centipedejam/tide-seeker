@@ -35,7 +35,7 @@ a {
 }
 
 #map {
-  height: 67vmin;
+  height: 63vmin;
   width: 80vmin;
 }
 
@@ -89,7 +89,6 @@ footer {
   background-color: #097e4c;
   border: #097e4c;
 }
-
 
 .btn-warning {
   background-color: #22668D;

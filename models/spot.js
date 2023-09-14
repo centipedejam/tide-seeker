@@ -34,7 +34,6 @@ const sessionSchema = new Schema({
     timestamps: true
 });
 
-
 const spotSchema = new Schema({
     city: String,
     lat: {
@@ -67,7 +66,7 @@ const spotSchema = new Schema({
         ref: 'User',
         required: true
     }
-})
+});
 
 const Spot = mongoose.model('Spot', spotSchema);
 
