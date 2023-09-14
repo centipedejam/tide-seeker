@@ -5,7 +5,7 @@
             <%= title%>
         </h1>
         <% sessions.forEach(function(s) {%>
-            <div class="card m-auto p-3" style="width: 40vmin">
+            <div class="card m-auto p-3" style="width: 60vmin">
                 <div class="card-body">
                     <h5 class="card-title">
                         <%=s.date%>
@@ -25,10 +25,10 @@
                 <a class="btn btn-primary" href="/sessions/<%= s._id%>">View Session</a>
                 <% if (user && s.user.equals(user._id)) {%>
                     <form action="/sessions/<%= s._id %>/edit" method="GET">
-                        <button class="btn btn-warning" style="width: 35.8vmin;" type="submit">Edit Session</button>
+                        <button class="btn btn-warning" style="width: 55.7vmin;" type="submit">Edit Session</button>
                     </form>
                     <form action="/sessions/<%= s._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger" style="width: 35.8vmin;" type="submit">Delete Session</button>
+                        <button class="btn btn-danger" style="width: 55.7vmin;" type="submit">Delete Session</button>
                     </form>
                     <%}%>
             </div>
