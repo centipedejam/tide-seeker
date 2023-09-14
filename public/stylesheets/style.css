@@ -31,7 +31,8 @@ a {
 }
 
 .spot-card {
-  width: 80vmin;
+  width: 90vmin;
+  line-height: 2vmin;
 }
 
 #map {
