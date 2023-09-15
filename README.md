@@ -21,6 +21,8 @@ View sessions of other users to see recent conditions at your favorite surf spot
 
 Add your own sessions with photos to share with the world!
 
+See important details and info about surf spots!
+
   ## :camera_flash: Screenshots 
 
   |   Description | Screenshot | 

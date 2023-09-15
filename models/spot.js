@@ -39,12 +39,14 @@ const spotSchema = new Schema({
     lat: {
         type: Number,
         min: -90,
-        max: 90
+        max: 90,
+        required: true
     },
     long: {
         type: Number,
         min: -180,
-        max: 180
+        max: 180,
+        required: true
     },
     ability: {
         type: String,
@@ -54,7 +56,8 @@ const spotSchema = new Schema({
     sessions: [sessionSchema],
     name: {
         type: String,
-        unique: true
+        unique: true,
+        required: true
     },
     bottomType: {
         type: String,
