@@ -126,3 +126,7 @@ footer {
   height: 8vmin;
   width: 8vmin;
 }
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  width: 30vmin !important;
+  }

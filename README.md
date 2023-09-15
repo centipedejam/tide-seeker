@@ -23,7 +23,9 @@ Add your own sessions with photos to share with the world!
 
 See important details and info about surf spots!
 
-  ## :camera_flash: Screenshots 
+https://trello.com/b/QUlTURQZ/project-2
+
+## :camera_flash: Screenshots 
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
