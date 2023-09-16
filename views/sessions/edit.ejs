@@ -7,7 +7,7 @@
                 <label for="swellDirection" class="form-label">Swell Direction</label>
                 <select name="swellDirection" id="swellDirection" class="form-select">
                 <%validSwellDirections.forEach(function(r){%>
-                    <option value="<%=r%>" <%=r===session.swellDirection ? 'selected' : '' %> ><%= r%></option>
+                    <option value="<%=r%>" <%=r === session.swellDirection ? 'selected' : '' %> ><%= r%></option>
                             <%}) %>
                 </select>
             </div>
@@ -15,7 +15,7 @@
                 <label for="size" class="form-label">Swell Size</label>
                 <select id="size" name="size" class="form-select">
                     <%validSizes.forEach(function(r){%>
-                        <option value="<%=r%>" <%=r===session.size ? 'selected' : '' %> ><%= r%>
+                        <option value="<%=r%>" <%= r === session.size ? 'selected' : '' %> ><%= r%>
                         </option>
                         <%}) %>
                 </select>
@@ -24,7 +24,7 @@
                 <label for="windDirection" class="form-label">Wind Direction</label>
                 <select name="windDirection" class="form-select" id="windDirection">
                     <%validWindDirections.forEach(function(r){%>
-                        <option value="<%=r%>" <%=r===session.windDirection ? 'selected' : '' %> ><%= r%></option>
+                        <option value="<%=r%>" <%=r === session.windDirection ? 'selected' : '' %> ><%= r%></option>
                             <%}) %>
                 </select>
             </div>
@@ -32,7 +32,7 @@
                 <label for="windStrength" class="form-label">Wind Strength</label>
                 <select id="windStrength" name="windStrength" class="form-select">
                     <%validWindStrengths.forEach(function(w){%>
-                        <option value="<%=w%>" <%=w===session.windStrength ? 'selected' : '' %> ><%= w%></option>
+                        <option value="<%=w%>" <%=w === session.windStrength ? 'selected' : '' %> ><%= w%></option>
                             <%}) %>
                 </select>
             </div>
@@ -40,7 +40,7 @@
                 <label for="rating" class="form-label">Rating</label>
                 <select id="rating" name="rating" class="form-select">
                     <%validRatings.forEach(function(w){%>
-                            <option value="<%=w%>" <%=w===session.rating ? 'selected' : '' %> ><%= w%></option>
+                            <option value="<%=w%>" <%= w === session.rating ? 'selected' : '' %> ><%= w%></option>
                             <%}) %>
                 </select>
             </div>

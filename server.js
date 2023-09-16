@@ -10,6 +10,7 @@ const passport = require('passport');
 const indexRouter = require('./routes/index');
 const spotsRouter = require('./routes/spots');
 const sessionsRouter = require('./routes/sessions');
+const usersRouter = require('./routes/users');
 
 require('dotenv').config();
 require('./config/database');
@@ -42,6 +43,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/spots', spotsRouter);
 app.use('/', sessionsRouter);
+app.use('/users', usersRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

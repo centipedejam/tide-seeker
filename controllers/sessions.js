@@ -32,13 +32,16 @@ async function show(req, res) {
 
 async function create(req, res) {
     const spot = await Spot.findById(req.params.id);
+    const author = await User.findById(req.user._id);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     console.log(req.body, req.user);
     spot.sessions.push(req.body);
+    author.sessions.push(req.body)
     try {
         await spot.save();
+        await author.save();
     } catch (err) {
         console.log(err);
     }
