@@ -23,6 +23,7 @@ async function show(req, res) {
         const session = spot.sessions.find(session => session._id == req.params.id);
         const userId = session.user;
         const author = await User.findById(userId);
+        console.log(author)
         res.render('sessions/show', { session, title: 'Show Session', author });
     } catch (error) {
         console.error(error);
@@ -32,13 +33,10 @@ async function show(req, res) {
 
 async function create(req, res) {
     const spot = await Spot.findById(req.params.id);
-    const author = await User.findById(req.user._id);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    console.log(req.body, req.user);
     spot.sessions.push(req.body);
-    author.sessions.push(req.body)
     try {
         await spot.save();
         await author.save();

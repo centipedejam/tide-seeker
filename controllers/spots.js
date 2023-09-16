@@ -19,7 +19,6 @@ function newSpot(req, res) {
 
 async function show(req, res) {
     const spot = await Spot.findById(req.params.id);
-    console.log(spot);
     res.render('spots/show', { title: spot.name, spot });
 }
 

@@ -7,7 +7,8 @@ module.exports = {
 
 
 async function showSessions (req, res) { 
-    const sessions = req.user.sessions;
+    const unformatedSessions = await Spot.find({ 'sessions.user': req.params.id }, 'sessions');
+    const sessions = unformatedSessions.flatMap(spot => spot.sessions);
     console.log(sessions);
-    res.render('users/sessions', { title: 'My Sessions', sessions });
+    res.render('users/sessions', { title: 'My Sessions', sessions});
 }

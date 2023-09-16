@@ -53,9 +53,9 @@ https://trello.com/b/QUlTURQZ/project-2
 
 ## :white_check_mark: Next Steps
 
-- [ ] Upload local image files
-- [ ] View your created sessions
-- [ ] View your favorite spots
+- ✅ User can view their sessions
+- [ ] Local Image Upload
+- [ ] Save and View favorite spots
 - [ ] Add filters and sort
 
 
