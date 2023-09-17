@@ -35,6 +35,8 @@
                     <% if (user) { %>
                         <a <%- title==='My Sessions' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
                             href="/users/<%= user._id%>/sessions">My Sessions</a>
+                        <a <%- title==='My Spots' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
+                            href="/users/<%= user._id%>/favorites">My Spots</a>
                         <a <%- title==='Add Surf Spot' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
                             href="/spots/new">Add Spot</a>
                         <a href="/logout" class="nav-link m-2">Log Out</a>
