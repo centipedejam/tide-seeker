@@ -22,5 +22,12 @@ async function showFavorites (req, res) {
 
 async function create (req, res) {
     const user = await User.findById(req.params.id);
-    res.redirect('/spots')
+    const spot = await Spot.findById(req.body.spotId);
+    user.favoriteSpots.push(spot);
+    try {
+        await user.save();
+    } catch (err) {
+        console.log(err);
+    }
+
 }
