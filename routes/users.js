@@ -9,6 +9,9 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/:id/sessions', ensureLoggedIn, usersCtrl.showSessions);
 //GET '/users/:id/favorites'
 router.get('/:id/favorites', ensureLoggedIn, usersCtrl.showFavorites);
+//POST '/users/:id/favorites'
+router.post('/:id/favorites', ensureLoggedIn, usersCtrl.create)
+
 
 
 

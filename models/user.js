@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Spot = require('../models/spot');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -7,6 +8,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    favoriteSpots: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Spot'
+    }],
     email: String,
     avatar: String
 }, {

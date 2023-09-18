@@ -36,6 +36,12 @@
     </div>
     <a class="spot-btn btn btn-primary" href="/spots/<%= spot._id%>/sessions">View Sessions</a>
     <a class="spot-btn btn btn-success" href="/spots/<%= spot._id%>/sessions/new">New Session</a>
+    <% if(user) {%>
+        <form action="/users/<%= user._id %>/favorites" method="POST">
+            <button type="submit" class="btn btn-success">Add to Favorites</button>
+        </form>
+        <%}%>
+
 </div>
 
 <%- include('../partials/footer') %>
