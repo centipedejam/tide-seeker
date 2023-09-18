@@ -1,4 +1,24 @@
 <%- include('../partials/header') %>
-<h1><%= title %></h1>
+<h1 class="text-center"><%= title %></h1>
+<div class="container mt-4">
+    <div class="container mt-4">
+        <h1 class="text-center mb-5"><%= title%></h1>
+        <% spots.forEach(function(s) { %>
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card mb-4">
+                <img style="height: 40vmin;" src="<%= s.img %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center"><%= s.name %></h5>
+                  <p class="card-text"><%= s.city %></p>
+                  <p class="card-text"><%= s.ability %> Surfers</p>
+                  <p class="card-text"><%= s.bottomType %></p>
+                  <a href="/spots/<%= s._id %>" class="btn btn-primary">More Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+    </div>
 
 <%- include('../partials/footer') %>

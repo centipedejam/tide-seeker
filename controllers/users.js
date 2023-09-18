@@ -17,7 +17,10 @@ async function showSessions (req, res) {
 }
 
 async function showFavorites (req, res) {
-    res.render('users/favorites', { title: 'My Spots' });
+    const user = await User.findById(req.params.id).populate('favoriteSpots');
+    const spots = user.favoriteSpots
+
+    res.render('users/favorites', { title: 'My Spots', spots });
 }
 
 async function create (req, res) {
