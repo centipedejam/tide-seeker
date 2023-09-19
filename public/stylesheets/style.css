@@ -53,16 +53,20 @@ a {
 }
 
 nav.navbar {
-  background-color: transparent;
+  background-color: #22668D;
 }
 
 .navbar-nav>a {
-  color: #004225;
+  color: #FFCF9D;
   font-size: 2vmin;
 }
 
+.active {
+  color: green;
+}
+
 .navbar-nav>a:hover {
-  color: #22668D;
+  color: #F5F5DC;
   font-size: 2vmin;
 }
 
