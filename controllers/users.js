@@ -26,7 +26,11 @@ async function showFavorites (req, res) {
 async function create (req, res) {
     const user = await User.findById(req.params.id);
     const spot = await Spot.findById(req.body.spotId);
-    user.favoriteSpots.push(spot);
+    if (user.favoriteSpots.includes(spot._id)) {
+        console.log('ALREADY A FAVORITE');
+    } else {
+        user.favoriteSpots.push(spot);
+    }
     try {
         await user.save();
     } catch (err) {
