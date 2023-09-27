@@ -40,8 +40,11 @@
         <form action="/users/<%= user._id %>/favorites" method="POST">
             <button spotId="<%= spot._id %>" userId="<%= user._id %>" id="addToFavorites" type="submit" class="btn btn-success">Add to Favorites</button>
         </form>
-        <%}%>
-
+        <%} else if (user) {%>
+            <form action="/users/<%= user._id %>/favorites" method="POST">
+                <button spotId="<%= spot._id %>" userId="<%= user._id %>" id="addToFavorites" type="submit" class="btn btn-success">Remove from Favorites</button>
+            </form>
+            <% }%>
 </div>
 
 <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

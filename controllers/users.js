@@ -36,5 +36,5 @@ async function create (req, res) {
     } catch (err) {
         console.log(err);
     }
-
+    res.redirect(`/spots/${spot._id}`)
 }

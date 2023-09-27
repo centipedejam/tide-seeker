@@ -3,13 +3,13 @@ const userId = addToFavoritesButton.getAttribute('userId');
 const spotId = addToFavoritesButton.getAttribute('spotId');
 
 addToFavoritesButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  addToFavoritesButton.style.visibility = 'hidden';
+  // addToFavoritesButton.innerText = 'Liked';
   axios.post(`/users/${userId}/favorites`, { spotId })
     .then(response => {
-      alert('you liked this page!')
+      console.log(response)
     })
     .catch(error => {
-      console.log(err)
+      console.log(error)
     });
 });
+
