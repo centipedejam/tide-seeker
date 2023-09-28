@@ -26,15 +26,13 @@ async function showFavorites (req, res) {
 async function create (req, res) {
     const user = await User.findById(req.params.id);
     const spot = await Spot.findById(req.body.spotId);
-    if (user.favoriteSpots.includes(spot._id)) {
-        console.log('ALREADY A FAVORITE');
-    } else {
-        user.favoriteSpots.push(spot);
-    }
+    user.favoriteSpots.push(spot);
     try {
         await user.save();
+        res.status(200).json({ message: 'Data updated' });
+        
     } catch (err) {
         console.log(err);
     }
-    res.redirect(`/spots/${spot._id}`)
+    
 }
