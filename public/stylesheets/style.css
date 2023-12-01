@@ -141,3 +141,8 @@ footer {
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   width: 30vmin !important;
 }
+
+.my-session-btn {
+  margin: 0.5rem;
+  height: 2.5rem;
+}
