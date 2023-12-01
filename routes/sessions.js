@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const sessionsCtrl = require('../controllers/sessions');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
+const upload = require('multer')();
 
 //all routes start with '/'
 

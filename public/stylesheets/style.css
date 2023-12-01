@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #FFCF9D;
+  background-color: #e19b5055;
 }
 
 h1 {
@@ -27,7 +27,14 @@ a {
 
 .spot-btn {
   width: 70vmin;
-  margin: 0.5vmin auto;
+  height: 2.75rem;
+  margin: 0 auto;
+}
+
+.spot-btn-btm {
+  width: 70vmin;
+  height: 2.75rem;
+  margin: 2rem auto;
 }
 
 .spot-card {
@@ -75,7 +82,7 @@ footer {
 }
 
 .btn-primary {
-  background-color: #004225;
+  background-color: #31834b;
   border: #004225;
 }
 
@@ -134,4 +141,3 @@ footer {
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   width: 30vmin !important;
 }
-

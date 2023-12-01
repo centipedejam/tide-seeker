@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
-<h2 class="text-center mt-5"><%= title %></h2>
+    <h2 class="text-center mt-5">
+        <%= title %>
+    </h2>
     <div class="container">
-        <form action="/spots/<%= spot._id %>/sessions" method="POST">
+        <form action="/spots/<%= spot._id %>/sessions" method="POST" enctype="multipart/form-data">
             <div class="m-5">
                 <div class="row">
                     <div class="col-3 mb-4">
@@ -33,7 +35,7 @@
                             <option value="Massive">Massive</option>
                         </select>
                     </div>
-                     <div class="col-2 mb-4">
+                    <div class="col-2 mb-4">
                         <select name="windDirection" class="form-select">
                             <option selected>Wind Direction</option>
                             <option value="N">N</option>
@@ -78,17 +80,14 @@
                         <input class="form-control" type="datetime-local" name="date" id="date">
                     </div>
                 </div>
-                <div class="mb-4">
-                    <label for="img" class="form-label">Img Url</label>
-                    <input type="text" class="form-control" name="img" id="img">
-                </div>
                 <div class="mb-5">
-                    <label for="img" class="form-label">Img Url</label>
-                    <input type="text" class="form-control" name="img" id="img">
+                    <label for="img" class="form-label">Image</label>
+                    <input type="file" class="form-control" name="img" id="img">
                 </div>
                 <div class="row">
                     <div class="form-floating mb-4">
-                        <textarea id="description-textarea" class="form-control" id="description" name="description"></textarea>
+                        <textarea id="description-textarea" class="form-control" id="description"
+                            name="description"></textarea>
                         <label for="description">Description</label>
                     </div>
                 </div>
@@ -96,5 +95,5 @@
             </div>
         </form>
     </div>
-    
-<%- include('../partials/footer') %>
+
+    <%- include('../partials/footer') %>
