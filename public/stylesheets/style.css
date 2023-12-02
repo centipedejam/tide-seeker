@@ -6,6 +6,7 @@
 
 body {
   background-color: #e19b5055;
+  height: 100%;
 }
 
 h1 {
@@ -79,6 +80,8 @@ nav.navbar {
 
 footer {
   color: grey;
+  position: sticky;
+  height: 3rem; 
 }
 
 .btn-primary {
@@ -147,8 +150,18 @@ footer {
   height: 2.5rem;
 }
 
-.no-session-btn {
+.no-session-div {
   display: flex;
   justify-content: center;
-  width: 10vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-session-btn {
+  width: 20vw;
+  margin-top: 2rem;
+}
+
+.container {
+  min-height: 75vh;
 }

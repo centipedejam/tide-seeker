@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <div class="container">
-    <h1 class="text-center mb-5"><%= title%></h1>
+    <h1 class="text-center mb-5 mt-5"><%= title%></h1>
     <% if (sessions.length) {%>
         <% sessions.forEach(function(s) {%>
             <div class="card m-auto p-3 mb-5" style="width: 60vmin">
@@ -23,9 +23,9 @@
             </div>
             <%}) %>
             <%} else {%>
-                <div>
-                    <h3 class="text-center mt-5">No sessions for <%= spot.name %>.</h3>
-                    <a class="btn btn-success no-session-btn" href="/spots/<%= spot._id%>/sessions/new">New Session</a>
+                <div class="no-session-div">
+                    <h3 class="text-center mt-3">No sessions for <%= spot.name %>.</h3>
+                    <a class="btn btn-success no-session-btn" href="/spots/<%= spot._id%>/sessions/new">Add Session</a>
                 </div>
                 <%}%>
 </div>
