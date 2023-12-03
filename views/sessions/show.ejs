@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <div class="container">
-    <h1 class="show-session-title text-center">Session at <%= spot.name %></h1>
+    <h3 class="show-session-title text-center">Session at <%= spot.name %></h3>
     <div class="card m-auto spot-card">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -20,14 +20,13 @@
                 </button>
             <div class="card-body">
                 <img class="session-avatar" src="<%=author.avatar%>" alt="">
-                <h6 class="mt-3 text-muted">Author: <%= author.name%></h6>
+                <h6 class="mt-3 text-muted">Posted By: <%= author.name%></h6>
+                <h6 class="card-text">Stars: <%= session.rating %></h6>
                 <h6 class="text-muted ">Date: <%= session.formattedDate%></h6>
                 <hr>
                 <p class="card-text">Swell: <%= session.size %> from the <%= session.swellDirection %></p>
                 <hr>
                 <p class="card-text">Wind: <%= session.windStrength %> from the <%= session.windDirection %></p>
-                <hr>
-                <p class="card-text">Stars: <%= session.rating %></p>
                 <hr>
                 <p class="card-text">Comments: <%= session.description%></p>
             </div>

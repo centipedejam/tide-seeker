@@ -190,3 +190,7 @@ footer {
 .show-session-title {
   margin: 3rem 0;
 }
+
+.card-text {
+  font-size: 0.9rem;
+}
