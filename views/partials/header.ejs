@@ -30,18 +30,26 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
-                    <a <%- title==='All Surf Spots' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
-                        href="/spots">All Spots</a>
                     <% if (user) { %>
-                        <a <%- title==='Add Surf Spot' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
-                            href="/spots/new">Add Spot</a>
-                        <a <%- title==='My Sessions' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
-                            href="/users/<%= user._id%>/sessions">My Sessions</a>
-                        <a <%- title==='My Spots' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
-                            href="/users/<%= user._id%>/favorites">Favorites</a>
-                        <a href="/logout" class="nav-link m-2">Log Out</a>
-                        <img src="<%= user.avatar%>" class="review-user" alt="avatar" referrerpolicy="no-referrer">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="<%= user.avatar%>" class="review-user" alt="avatar" referrerpolicy="no-referrer">
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a <%- title==='Add Surf Spot' ? 'class="nav-link m-2 active dropdown-item"' : 'class="nav-link m-2 dropdown-item"' %>
+                            href="/spots/new">Add Spot</a></li>
+                            <li><a <%- title==='All Surf Spots' ? 'class="nav-link m-2 active dropdown-item"' : 'class="nav-link m-2 dropdown-item"' %>
+                                href="/spots">All Spots</a></li>
+                            <li><a <%- title==='My Sessions' ? 'class="nav-link m-2 active dropdown-item"' : 'class="nav-link m-2 dropdown-item"' %>
+                            href="/users/<%= user._id%>/sessions">My Sessions</a></li>
+                            <li><a <%- title==='My Spots' ? 'class="nav-link m-2 active dropdown-item"' : 'class="nav-link m-2 dropdown-item"' %>
+                            href="/users/<%= user._id%>/favorites">Favorites</a></li>
+                            <li><a href="/logout" class="nav-link m-2 dropdown-item">Log Out</a></li>
+                    </ul>
+                    </li>
                         <% } else { %>
+                            <a <%- title==='All Surf Spots' ? 'class="nav-link m-2 active"' : 'class="nav-link m-2"' %>
+                                href="/spots">All Spots</a>
                             <a class="nav-link m-2" href="/auth/google">Log In&nbsp</a>
                             <% } %>
                 </div>
