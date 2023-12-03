@@ -23,8 +23,7 @@ async function show(req, res) {
         const session = spot.sessions.find(session => session._id == req.params.id);
         const userId = session.user;
         const author = await User.findById(userId);
-        console.log(author)
-        res.render('sessions/show', { session, title: 'Show Session', author });
+        res.render('sessions/show', { session, title: 'Show Session', author, spot });
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');

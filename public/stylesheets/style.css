@@ -39,7 +39,7 @@ a {
 }
 
 .spot-card {
-  width: 90vmin;
+  width: 80vmin;
 }
 
 #map {
@@ -179,9 +179,14 @@ footer {
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .index-title {
   margin-bottom: 5rem;
   padding-top: 5rem;
+}
+
+.show-session-title {
+  margin: 3rem 0;
 }
