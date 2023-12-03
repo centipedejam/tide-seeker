@@ -31,12 +31,14 @@
             <p class="card-text">Comments: <%= session.description%></p>
         </div>
         <% if(user && session.user.equals(user._id)) {%>
-            <form action="/sessions/<%= session._id %>/edit" method="GET">
-                <button class="btn btn-warning" style="width: 90vmin;" type="submit">Edit Session</button>
-            </form>
-            <form action="/sessions/<%= session._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-danger" style="width: 90vmin;" type="submit">Delete Session</button>
-            </form>
+            <div class="session-btn-div">
+                <form action="/sessions/<%= session._id %>/edit" method="GET">
+                    <button class="btn btn-warning edit-btn" type="submit">Edit Session</button>
+                </form>
+                <form action="/sessions/<%= session._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger delete-btn" type="submit">Delete Session</button>
+                </form>
+            </div>
             <%}%>
     </div>
 </div>

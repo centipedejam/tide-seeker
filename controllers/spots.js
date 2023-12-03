@@ -14,7 +14,7 @@ async function index(req, res) {
 };
 
 function newSpot(req, res) {
-    res.render('spots/new', { title: 'Add Surf Spot' });
+    res.render('spots/new', { title: 'Add a Surf Spot' });
 }
 
 async function show(req, res) {

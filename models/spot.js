@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema({
     date: Date,
+    formattedDate: String,
     swellDirection: {
         type: String,
         enum: ['N', 'E', 'S', 'W', 'NE', 'NW', 'SE', 'SW', 'NNW', 'NNE', 'SSW', 'SSE']
@@ -32,6 +33,14 @@ const sessionSchema = new Schema({
     description: String
 }, {
     timestamps: true
+});
+
+sessionSchema.pre('save', function(next) {
+    let dateObj = new Date(this.date);
+    let formattedDate = dateObj.toLocaleDateString('en-US');
+    let formattedTime = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    this.formattedDate = `${formattedDate} ${formattedTime}`;
+    next();
 });
 
 const spotSchema = new Schema({

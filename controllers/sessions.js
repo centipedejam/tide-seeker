@@ -39,7 +39,7 @@ async function create(req, res) {
     spot.sessions.push(req.body);
     try {
         await spot.save();
-        await author.save();
+        console.log(req.body);
     } catch (err) {
         console.log(err);
     }
@@ -48,7 +48,6 @@ async function create(req, res) {
 
 async function newSession(req, res) {
     const spot = await Spot.findById(req.params.id);
-    console.log(spot);
     res.render('sessions/new', { title: `New Session at ${spot.name}`, spot });
 }
 

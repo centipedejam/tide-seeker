@@ -6,7 +6,7 @@
         <% sessions.forEach(function(s) {%>
             <div class="card m-auto p-3 mb-5" style="width: 60vmin">
                 <div class="card-body">
-                    <h5 class="card-title"><%=s.date%></h5>
+                    <h5 class="card-title"><%=s.formattedDate%></h5>
                     <p class="card-text">Swell: <%=s.size %> <%=s.swellDirection %></p>
                     <p class="card-text">Wind: <%=s.windDirection %> <%=s.windStrength %></p>
                     <p class="card-text mb-3">Comments: <%=s.description %></p>

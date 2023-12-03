@@ -10,14 +10,13 @@
                     <p class="card-text">Wind: <%=s.windDirection %> <%=s.windStrength %></p>
                     <p class="card-text mb-3">Comments: <%=s.description %></p>
                 </div>
-                <a class="btn btn-primary my-session-btn" href="/sessions/<%= s._id%>" style="width: 56vmin;">View Session</a>
+                <div class="session-btn-div">
+                    <a href="/sessions/<%= s._id%>"><button class="btn my-session-btn">View Session</button></a>
                     <form action="/sessions/<%= s._id %>/edit" method="GET">
-                        <button class="btn btn-warning my-session-btn" style="width: 56vmin;" type="submit">Edit Session</button>
-                    </form>
-                    <form action="/sessions/<%= s._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger my-session-btn" style="width: 56vmin;" type="submit">Delete Session</button>
+                        <button class="btn my-session-btn" type="submit">Edit Session</button>
                     </form>
                 </div>
+            </div>
             <%}) %>
 </div>
 
